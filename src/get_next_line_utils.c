@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pudry <pudry@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 11:37:40 by pudry             #+#    #+#             */
-/*   Updated: 2024/09/11 11:39:01 by pudry            ###   ########.ch       */
+/*   Created: 2024/09/11 11:44:55 by pudry             #+#    #+#             */
+/*   Updated: 2024/09/11 11:44:55 by pudry            ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_get_ptr_line(char *ptr, char *file, int fd)
 		ptr = (char *) ft_calloc(1, sizeof(char));
 		ptr[0] = '\0';
 	}
-	while (i >= BUFFER_SIZE && !ft_strchr(file))
+	while (i >= BUFFER_SIZE && !ft_strchr_gnl(file))
 	{
 		i = read(fd, file, BUFFER_SIZE);
 		if (i > 0)

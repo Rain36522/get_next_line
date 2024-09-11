@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pudry <pudry@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pudry <pudry@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 14:01:18 by pudry             #+#    #+#             */
-/*   Updated: 2023/10/23 13:52:33 by pudry            ###   ########.fr       */
+/*   Created: 2024/09/11 11:45:01 by pudry             #+#    #+#             */
+/*   Updated: 2024/09/11 11:46:12 by pudry            ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strchr(char *ptr)
+int	ft_strchr_gnl(char *ptr)
 {
 	while (*ptr)
 	{
@@ -77,27 +77,27 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_give_line(ptr);
 	ptr = ft_remove_line(ptr);
-	if (!ft_strchr(line))
+	if (!ft_strchr_gnl(line))
 		free(ptr);
 	return (line);
 }
 
-int	main(void)
-{
-	int		fd;
-	int		i;
-	char	*line;
+// int	main(void)
+// {
+// 	int		fd;
+// 	int		i;
+// 	char	*line;
 	
-	fd = open("test.txt", O_RDWR);
-	i = 0;
-	printf("________________________________________________\n");
-	printf("\\                                              /\n");
-	printf("|=================================TEST=========|\n");
-	printf("/----------------------------------------------\\\n");
-	while(i ++ <= 5)
-	{
-		line = get_next_line(fd);
-		printf("%i. line : %s\n", i, line);
-		printf("-----------------------------------------\n");
-	}
-}
+// 	fd = open("test.txt", O_RDWR);
+// 	i = 0;
+// 	printf("________________________________________________\n");
+// 	printf("\\                                              /\n");
+// 	printf("|=================================TEST=========|\n");
+// 	printf("/----------------------------------------------\\\n");
+// 	while(i ++ <= 5)
+// 	{
+// 		line = get_next_line(fd);
+// 		printf("%i. line : %s\n", i, line);
+// 		printf("-----------------------------------------\n");
+// 	}
+// }
